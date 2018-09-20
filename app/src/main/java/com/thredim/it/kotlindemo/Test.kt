@@ -24,6 +24,9 @@ class Test{
         return a+b
     }
 
+    fun sum7(a:Int,b:Int):Int{
+        return a+b
+    }
     fun main(args:Array<String>){
         print("sum of 3 and 5")
         println(sum(3,5))
