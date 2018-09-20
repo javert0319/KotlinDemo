@@ -33,7 +33,10 @@ class MainActivity : AppCompatActivity() {
         tv_kotlin.setOnClickListener {
             view -> "Hello World"
         }
+
+
     }
+
 
     fun sum1(a:Int,b:Int) = a+b
 
@@ -42,6 +45,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun sum3(a:String,b:String):String{
+        return a+b
+    }
+
+    fun sum4(a:String,b:String):String{
         return a+b
     }
 
