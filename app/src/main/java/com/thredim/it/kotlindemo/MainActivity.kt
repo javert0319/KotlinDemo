@@ -45,6 +45,9 @@ class MainActivity : AppCompatActivity() {
         return a+b
     }
 
+    fun sum5(a:String,b:String):String{
+        return a+b
+    }
     fun login(name:String,pass:String):String{
         return "name:$name"+";pass:$pass"
     }
