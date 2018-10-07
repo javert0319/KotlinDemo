@@ -8,8 +8,5 @@ package com.thredim.it.kotlindemo
  * @email thredim@thredim.com
  * @describe 添加描述
  */
-class dev {
-    companion object {
-        var str = "Android Studio Git"
-    }
+class V1 {
 }
