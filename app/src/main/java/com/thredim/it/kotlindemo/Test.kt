@@ -1,35 +1,43 @@
 package com.thredim.it.kotlindemo
 
-import java.util.*
+import android.text.TextUtils
+import java.util.Arrays
 
 /**
- * @company Thredim
- * @date on 2018/9/8.
  * @author JAIWEI
+ * @company Thredim
+ * @date on 2018/10/23.
  * @org www.thredim.com (宁波视睿迪光电有限公司)
  * @email thredim@thredim.com
  * @describe 添加描述
  */
-class Test{
+class Test {
 
-    companion object {
-        val str:String = "Hello World"
+    fun getWeek(str: String): String? {
+        var result: String? = null
+        if(!TextUtils.isEmpty(str)){
+            val str2 = str.replace(" ", "")//去掉所用空格
+            val list = Arrays.asList(*str2.split(",".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray())
+            if (list.size == 7){
+                result = "每天"
+            }else{
+                for (i in list.indices) {
+                    when (list[i]) {
+                        "1" -> result = "周日 "
+                        "2" -> result += "周一 "
+                        "3" -> result += "周二 "
+                        "4" -> result += "周三 "
+                        "5" -> result += "周四 "
+                        "6" -> result += "周五 "
+                        "7" -> result += "周六"
+                        else -> {
+                        }
+                    }
+                }
+            }
 
-        fun sum3(a:Int,b:Int):Int{
-            return a+b
         }
-    }
 
-    fun sum(a:Int,b:Int):Int{
-        return a+b
+        return result
     }
-
-    fun sum7(a:Int,b:Int):Int{
-        return a+b
-    }
-    fun main(args:Array<String>){
-        print("sum of 3 and 5")
-        println(sum(3,5))
-    }
-
 }
